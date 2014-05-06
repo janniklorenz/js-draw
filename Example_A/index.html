@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script src="jquery.event.move.js"></script>
+        
+        <style>
+            body {margin:0;padding:0;width:100%;height:100%;}
+            button {
+                border-radius:0px;
+                padding:0;
+                margin:0;
+                border:0;
+                opacity:0.3;
+                background-color:transparent;
+                width:10%;
+                height:30px;
+            }
+        </style>
+		
+	</head>
+	<body style="margin:0;width:100%;height:100%;overflow: hidden;">
+		
+		<canvas id="mainCanvas" style="display:block;position:fixed;z-index:-10;" style="border:1px solid #000000;"></canvas>
+		
+        <div style="top:0px;position:fixed;width:100%;">
+            <button class="link" onclick="changeColor('000000');" style="border-top:10px solid #000000;color:#fff;" id="c000000"></button>
+            <button class="link" onclick="changeColor('ffffff');" style="border-top:10px solid #ffffff;" id="cffffff"></button>
+            <button class="link" onclick="changeColor('ff0000');" style="border-top:10px solid #ff0000;" id="cff0000"></button>
+            <button class="link" onclick="changeColor('ff8800');" style="border-top:10px solid #ff8800;" id="cff8800"></button>
+            <button class="link" onclick="changeColor('ffff00');" style="border-top:10px solid #ffff00;" id="cffff00"></button>
+            <button class="link" onclick="changeColor('00ff00');" style="border-top:10px solid #00ff00;" id="c00ff00"></button>
+            <button class="link" onclick="changeColor('00ffff');" style="border-top:10px solid #00ffff;" id="c00ffff"></button>
+            <button class="link" onclick="changeColor('0000ff');" style="border-top:10px solid #0000ff;color:#fff;" id="c0000ff"></button>
+            
+            <button class="link" onclick="ims.localStorage.setItem(ims.currentActivePageID+'draw', getPack() ); ims.closeOverlay(ims.pageID);" style="width:30px;float:right;">X</button>
+		</div>
+        
+        <div style="bottom:0px;position:fixed;width:100%;">
+            <button class="link" onclick="changeWidth('20');" style="border-bottom:15px solid #000;width:10%;" id="s20"></button>
+            <button class="link" onclick="changeWidth('10');" style="border-bottom:10px solid #000;" id="s10"></button>
+            <button class="link" onclick="changeWidth('5');"  style="border-bottom:5px solid #000;" id="s5"></button>
+            <button class="link" onclick="changeWidth('4');"  style="border-bottom:4px solid #000;" id="s4"></button>
+            <button class="link" onclick="changeWidth('3');"  style="border-bottom:3px solid #000;" id="s3"></button>
+            <button class="link" onclick="changeWidth('2');"  style="border-bottom:2px solid #000;" id="s2"></button>
+            <button class="link" onclick="changeWidth('1');"  style="border-bottom:1px solid #000;" id="s1"></button>
+            
+            <button class="link" onclick="clearCurrentPack();" style="float:right;width:30px;">clear</button>
+		</div>
+		<!--- <button class="link" onclick="changePack('0');">P1</button> --->
+		<!--- <button class="link" onclick="changePack('1');">P2</button> --->
+		
+		
+		<!--- <button class="link" onclick="$('#test').html(getPack());">test1</button> --->
+        
+        <script type="text/javascript" src="index.js"></script>
+        
+        
+		
+	</body>
+</html>
